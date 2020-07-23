@@ -22,6 +22,14 @@ public class ScopeTestappApplication {
 
 		PersonDAO personDAO2 = applicationContext.getBean(PersonDAO.class);
 
+		System.out.println("##################### "+personDAO);
+
+		System.out.println("#####################  "+personDAO.getJdbcConnection());
+
+		System.out.println("#####################  "+personDAO2);
+
+		System.out.println("#####################  "+personDAO2.getJdbcConnection());
+
 		LOGGER.info("{}",personDAO);
 		LOGGER.info("{}",personDAO.getJdbcConnection());
 
