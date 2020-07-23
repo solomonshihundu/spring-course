@@ -1,10 +1,10 @@
-package com.ss.springcourse.testapp;
+package com.ss.springcourse.testapp.basic;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+@Qualifier("bubble")
 public class BubbleSortAlgo implements SortAlgorithm
 {
     public int sort(int[] numbers) {
