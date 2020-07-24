@@ -4,12 +4,10 @@ import com.ss.springcourse.testapp.springapp.basic.BinarySearchImplementation;
 import com.ss.springcourse.testapp.springapp.basic.BubbleSortAlgo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Scope;
 
 @SpringBootApplication
 public class BasicTestApp
@@ -19,8 +17,18 @@ public class BasicTestApp
 	public static void main(String[] args)
 	{
 
+		/**
+		 * Specifying the application context we wish to run i.e this class
+		 */
 		ApplicationContext applicationContext = SpringApplication.run(BasicTestApp.class, args);
+
+		/**
+		 * ask spring to create a bean from the specified class
+		 * then match its implementation
+		 * i.e dependency injection
+		 */
 		BinarySearchImplementation binarySearchImplementation = applicationContext.getBean(BinarySearchImplementation.class);
+
 
 		int [] searchPool = new int[]{3,6,7,1,10,7,2};
 		int result = binarySearchImplementation.binarySearch(searchPool,1);
@@ -37,10 +45,11 @@ public class BasicTestApp
 		BubbleSortAlgo bubbleSortAlgo2 = appContext.getBean(BubbleSortAlgo.class);
 		LOGGER.info(String.valueOf(bubbleSortAlgo2.hashCode()));
 
-		appContext.close();
-
-		LOGGER.info("WE SHOULD NEVER GET HERR");
-
+		/**
+		 * perform routine housekeeping before destroying bean
+		 * this saves on resources and averts memory leaks
+		 */
+		binarySearchImplementation.close();
 	}
 
 }

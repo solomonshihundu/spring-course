@@ -49,7 +49,7 @@ public class BinarySearchImplementation
      * housekeeping code could be written here
      */
     @PreDestroy
-    public void preDestroy()
+    public void shutdown()
     {
         logger.info("PRE - DESTROY");
     }
