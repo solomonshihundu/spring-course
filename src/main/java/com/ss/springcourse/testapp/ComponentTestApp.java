@@ -3,12 +3,11 @@ package com.ss.springcourse.testapp;
 import com.ss.springcourse.testapp.componentscan.ComponentDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
 @ComponentScan("com.ss.springcourse.testapp.componentscan")
 public class ComponentTestApp {
 
@@ -16,8 +15,17 @@ public class ComponentTestApp {
 
 	public static void main(String[] args)
 	{
-		ApplicationContext applicationContext = SpringApplication.run(ComponentTestApp.class, args);
+		/**
+		 * initializing the desired application context
+		 */
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+		applicationContext.register(ComponentTestApp.class);
+		applicationContext.refresh();
 
+		/**
+		 * bean creation
+		 *
+		 */
 		ComponentDAO componentDAO = applicationContext.getBean(ComponentDAO.class);
 
 		ComponentDAO componentDAO2 = applicationContext.getBean(ComponentDAO.class);
