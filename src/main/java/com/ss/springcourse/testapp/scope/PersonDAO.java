@@ -1,4 +1,4 @@
-package com.ss.springcourse.testapp.springapp.scope;
+package com.ss.springcourse.testapp.scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,5 +1,5 @@
 
-package com.ss.springcourse.testapp.springapp.basic;
+package com.ss.springcourse.testapp.basic;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.ss.springcourse.testapp.springapp.basic;
+package com.ss.springcourse.testapp.basic;
 
 public interface SortAlgorithm {
 

@@ -1,6 +1,6 @@
 package com.ss.springcourse.testapp;
 
-import com.ss.springcourse.testapp.springapp.basic.BinarySearchImplementation;
+import com.ss.springcourse.testapp.basic.BinarySearchImplementation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan
+@ComponentScan("com.ss.springcourse.testapp")
 public class BasicTestApp
 {
 	private static Logger LOGGER = LoggerFactory.getLogger(BasicTestApp.class);

@@ -1,4 +1,4 @@
-package com.ss.springcourse.testapp.springapp.scope;
+package com.ss.springcourse.testapp.scope;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
