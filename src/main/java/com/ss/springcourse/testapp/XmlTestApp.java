@@ -31,6 +31,9 @@ public class XmlTestApp {
 
 		XmlPersonDAO xmlPersonDAO2 = applicationContext.getBean(XmlPersonDAO.class);
 
+		LOGGER.info("BEANS LOADED BY SPRING -> {}",(Object) applicationContext.getBeanDefinitionNames());
+		LOGGER.info("NO OF BEANS LOADED BY SPRING -> {}",applicationContext.getBeanDefinitionCount());
+
 		LOGGER.info("{}",xmlPersonDAO);
 		LOGGER.info("{}",xmlPersonDAO.getXmlJdbcConnection());
 
