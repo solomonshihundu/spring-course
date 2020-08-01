@@ -9,8 +9,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
+
+/** using java context
+ * @ContextConfiguration(classes = BasicTestApp.class)
+ */
+
+/**
+ * using xml context
+ * @ContextConfiguration(locations = "/testApplicationContext.xml")
+ */
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = BasicTestApp.class)
+@ContextConfiguration(locations = "/testApplicationContext.xml")
 public class BinarySearchTest
 {
     @Autowired
